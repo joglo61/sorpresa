@@ -16,7 +16,7 @@ def mover_no():
 
 @app.route('/respuesta_si', methods=['POST'])
 def respuesta_si():
-    return jsonify({"mensaje": "Este detalle es para demostrarte lo mucho que te amo y sepas lo especial que eres para mi, cada dia me enamoro mas y mas de ti 💕"})
+    return jsonify({"mensaje": "Este detalle es para demostrarte lo mucho que te amo y que sepas lo especial que eres para mí. Cada día me enamoro más y más de ti. 💕"})
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
