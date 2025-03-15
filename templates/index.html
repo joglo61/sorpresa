@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #si {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #F44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi novia?</h1>
+    <div id="buttons">
+        <button id="si" onclick="respuestaSi()">Sí</button>
+        <button id="no" onmouseover="moverNo()">No</button>
+    </div>
+    <script>
+        function moverNo() {
+            fetch('/mover_no', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('no').style.left = data.x + 'px';
+                    document.getElementById('no').style.top = data.y + 'px';
+                });
+        }
+        function respuestaSi() {
+            fetch('/respuesta_si', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.body.innerHTML = `<h1>${data.mensaje}</h1>`;
+                });
+        }
+    </script>
+</body>
+</html>
