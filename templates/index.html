@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quieres ser mi novia?</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #333;
+            background-color: #222;
             color: white;
             display: flex;
             flex-direction: column;
@@ -16,20 +17,35 @@
             justify-content: center;
             height: 100vh;
         }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
         #buttons {
             margin-top: 20px;
         }
+
         button {
             font-size: 18px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin: 10px;
             border: none;
             cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
         }
+
         #si {
             background-color: #4CAF50;
             color: white;
         }
+
+        #si:hover {
+            background-color: #45a049;
+        }
+
         #no {
             background-color: #F44336;
             color: white;
@@ -37,6 +53,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>¿Quieres ser mi novia?</h1>
     <div id="buttons">
@@ -61,4 +78,5 @@
         }
     </script>
 </body>
+
 </html>
